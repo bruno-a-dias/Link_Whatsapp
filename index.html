@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - WhatsApp</title>
+
+    <style>
+        body {
+            margin-top: 80px;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+    
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            padding: 8px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    
+        button {
+            width: 80px;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bolder;
+        }
+    
+    
+    </style>
+
+
+
+
 </head>
+
 <body>
     <h1>Preencha os campos abaixo:</h1>
-    <form id="formulario">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
+    <br><br>
+                <form id="formulario" class="container">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
 
-        <label for="opcao">Escolha uma das opções:</label>
-            <select id="opcao" name="opcao">
-                <option value="um Orçamento">Orçamento</option>
-                <option value="uma Sugestão">Sugestão</option>
-                <option value="uma Reclamação">Reclamação</option>
-                <option value="Outros">Outros</option>
-            </select><br><br>
+                    <label for="opcao">Escolha uma das opções:</label>
+                    <select id="opcao" name="opcao">
+                        <option value="um Orçamento">Orçamento</option>
+                        <option value="uma Sugestão">Sugestão</option>
+                        <option value="uma Reclamação">Reclamação</option>
+                        <option value="Outros">Outros</option>
+                    </select><br><br>
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required><br><br>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required><br><br>
 
-        <button type="submit">Enviar</button>
-    </form>
-
+                    <button type="submit">Enviar</button>
+                </form>
+            
     <script>
-        document.getElementById('formulario').addEventListener('submit', function(event) {
+        document.getElementById('formulario').addEventListener('submit', function (event) {
             event.preventDefault();
 
             const nome = document.getElementById('nome').value;
@@ -38,10 +105,11 @@
             const telefone = document.getElementById('telefone').value;
 
             const urlWhatsApp = `https://wa.me/5561999999999?text=Olá, meu nome é ${nome}.%0A%0AMeu email é ${email} e meu telefone é ${telefone}.%0A%0AGostaria de fazer ${opcao}!`;
-                               
+
             window.open(urlWhatsApp, '_blank');
         });
     </script>
     <!-- URL do whatsapp, para acrescentar a quebra de linha utilizar %0A -->
 </body>
+
 </html>
