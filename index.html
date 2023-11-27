@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - WhatsApp</title>
+</head>
+<body>
+    <h1>Preencha os campos abaixo:</h1>
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="opcao">Escolha uma das opções:</label>
+            <select id="opcao" name="opcao">
+                <option value="um Orçamento">Orçamento</option>
+                <option value="uma Sugestão">Sugestão</option>
+                <option value="uma Reclamação">Reclamação</option>
+                <option value="Outros">Outros</option>
+            </select><br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const opcao = document.getElementById('opcao').value;
+            const telefone = document.getElementById('telefone').value;
+
+            const urlWhatsApp = `https://wa.me/5561999999999?text=Olá, meu nome é ${nome}.%0A%0AMeu email é ${email} e meu telefone é ${telefone}.%0A%0AGostaria de fazer ${opcao}!`;
+                               
+            window.open(urlWhatsApp, '_blank');
+        });
+    </script>
+    <!-- URL do whatsapp, para acrescentar a quebra de linha utilizar %0A -->
+</body>
+</html>
