@@ -8,14 +8,14 @@
 
     <style>
         body {
-            margin-top: 80px;
+            margin-top: 40px;
             background-color: #222;
             color: #fff;
             font-family: Arial, sans-serif;
         }
     
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             padding: 20px;
             border: 2px solid #fff;
@@ -92,6 +92,9 @@
                     <label for="telefone">Telefone:</label>
                     <input type="tel" id="telefone" name="telefone" required><br><br>
 
+                    <label for="textarea">Mensagem:</label>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Informe aqui sua mensagem."></textarea>
+
                     <button type="submit">Enviar</button>
                 </form>
             
@@ -103,8 +106,9 @@
             const email = document.getElementById('email').value;
             const opcao = document.getElementById('opcao').value;
             const telefone = document.getElementById('telefone').value;
+            const textarea = document.getElementById('textarea').value;
 
-            const urlWhatsApp = `https://wa.me/5561999999999?text=Olá, meu nome é ${nome}.%0A%0AMeu email é ${email} e meu telefone é ${telefone}.%0A%0AGostaria de fazer ${opcao}!`;
+            const urlWhatsApp = `https://wa.me/5561999999999?text=Olá, meu nome é ${nome}.%0A%0AMeu email é ${email} e meu telefone é ${telefone}.%0A%0AGostaria de fazer ${opcao}!%0A%0A${textarea}`;
 
             window.open(urlWhatsApp, '_blank');
         });
